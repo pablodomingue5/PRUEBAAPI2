@@ -3,12 +3,9 @@ package com.example.pruebaconexionapirest;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.JsonReader;
 import android.util.Log;
 
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,11 +17,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLDecoder;
-import java.util.ArrayList;
 import java.util.List;
 
 public class GetHttpClass extends AsyncTask<Void,Void,String> {
@@ -44,7 +39,7 @@ public class GetHttpClass extends AsyncTask<Void,Void,String> {
     protected String doInBackground(Void... voids) {
         String result = null;
         try {
-            String wsURL = "http://192.168.1.129/TFG/adacc.php";
+            String wsURL = "http://192.168.0.225/TFG/adacc.php";
             URL url = new URL(wsURL);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());

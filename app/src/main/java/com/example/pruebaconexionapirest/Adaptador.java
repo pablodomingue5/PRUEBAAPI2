@@ -1,6 +1,5 @@
 package com.example.pruebaconexionapirest;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Adaptador extends RecyclerView.Adapter<Adaptador.PersonViewHolder>  {
@@ -58,7 +56,7 @@ public static class PersonViewHolder extends RecyclerView.ViewHolder {
 
     }
 
-    @Override
+   // @Override
 
 
     public void onBindViewHolder(PersonViewHolder viewHolder, final int i) {
@@ -72,9 +70,9 @@ public static class PersonViewHolder extends RecyclerView.ViewHolder {
                 Bundle bundle = new Bundle();
                 bundle.putString("curImagen", items.get(i).getUrlImagen());
                 bundle.putString("curNombre", items.get(i).getTitulo());
-                Intent iconIntent = new Intent(view.getContext(), BioActivity.class);
-                iconIntent.putExtras(bundle);
-                view.getContext().startActivity(iconIntent);
+               // Intent iconIntent = new Intent(view.getContext(), BioActivity.class);
+              //  iconIntent.putExtras(bundle);
+              //  view.getContext().startActivity(iconIntent);
             }
         });
 
