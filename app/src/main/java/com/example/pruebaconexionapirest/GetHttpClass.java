@@ -38,8 +38,10 @@ public class GetHttpClass extends AsyncTask<Void,Void,String> {
     @Override
     protected String doInBackground(Void... voids) {
         String result = null;
+
         try {
-            String wsURL = "http://192.168.0.225/TFG/adacc.php";
+            String[] parametros = {"idApartadoSeleccionado", "1"};
+            String wsURL = "http://192.168.1.115/TFG/adacc.php?" + parametros[0] + "=" + parametros[1];
             URL url = new URL(wsURL);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             InputStream in = new BufferedInputStream(urlConnection.getInputStream());
@@ -82,8 +84,9 @@ public class GetHttpClass extends AsyncTask<Void,Void,String> {
                // Log.d("OnPostExecute", "recoge idModelo"+idModelo+"");
                 String nombreModelo = jsonArray.getJSONObject(it).getString("nombreModelo");
                 String urlModelo = jsonArray.getJSONObject(it).getString("urlModelo");
+                String nombreSerie = jsonArray.getJSONObject(it).getString("nombreSerie");
                 Log.d("OnPostExecute", "Registro Recibido:"+nombreModelo+"-"+urlModelo);
-                Entidad x = new Entidad(nombreModelo, urlModelo);
+                Entidad x = new Entidad(nombreSerie+" "+nombreModelo, urlModelo);
                 Log.d("OnPostExecute", "Objeto Recibido:"+x.getTitulo()+"-"+ x.getUrlImagen());
                this.httpList.add(x);
 

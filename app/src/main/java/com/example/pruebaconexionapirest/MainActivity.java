@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
             iManager = new LinearLayoutManager(this);
             recycler.setLayoutManager(iManager);
-         //  recycler.setAdapter(adapter);
+         // recycler.setAdapter(adapter);
             llamarHttpClass();
 
         }
